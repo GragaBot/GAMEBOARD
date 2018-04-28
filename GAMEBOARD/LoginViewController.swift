@@ -2,7 +2,7 @@
 //  LoginViewController.swift
 //  GAMEBOARD
 //
-//  Created by T on 4/27/18.
+//  Created by T on 4/28/18.
 //  Copyright © 2018 T. All rights reserved.
 //
 
@@ -10,212 +10,120 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-   
+    @IBOutlet weak var sc: UISegmentedControl!
     
-    @IBOutlet var addForgetPasswordView: UIView!
+    @IBOutlet weak var userName: UITextField!
     
-    @IBOutlet weak var forgetPasswordTextField: UITextField!
-    @IBOutlet weak var passwordButton: UIButton!
-    @IBOutlet weak var logoImageView: UIImageView!
-    @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var email: UITextField!
     
-    var inputsContainerViewHeightAnchor: NSLayoutConstraint?
-    var nameTextFieldHeightAnchor: NSLayoutConstraint?
-    var emailTextFieldHeightAnchor: NSLayoutConstraint?
-    var passwordTextFieldHeightAnchor: NSLayoutConstraint?
+    @IBOutlet weak var password: UITextField!
     
-    let inputsContainerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor.white
-        
-        view.translatesAutoresizingMaskIntoConstraints = false
-        
-        view.layer.cornerRadius = 5
-        view.layer.masksToBounds = true
-        return view
-    }()
+    @IBOutlet weak var loginORegister: UIButton!
     
-    lazy var loginRegisterButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.backgroundColor = UIColor.black
-        button.setTitle("Login", for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(UIColor.white, for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        
-        button.layer.cornerRadius = 5
-        button.layer.masksToBounds = true
-        
-        button.addTarget(self, action: #selector(handleLoginRegister), for: .touchUpInside)
-        
-    
-        return button
-    }()
-    
-    
-    let forgotPasswordTextField: UITextField = {
-        let tf = UITextField()
-        tf.placeholder = "Forgot your password?"
-        return tf
-    }()
-    
-    let nameTextField:UITextField = {
-        let tf = UITextField()
-        tf.placeholder = "Name"
-        tf.clearButtonMode = UITextFieldViewMode.whileEditing
-        tf.tintColor = UIColor(red: 55/255, green: 183/255, blue: 255/255, alpha: 1)
-        tf.translatesAutoresizingMaskIntoConstraints = false
-        @objc        
-        return tf
-    }()
-    
-    let nameSeparatorView:UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor(red: 220/255, green: 220/255, blue: 220/255, alpha: 1)
-        
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    let emailTextField:UITextField = {
-        let tf = UITextField()
-        tf.placeholder = "Email"
-        tf.keyboardType = UIKeyboardType.emailAddress
-        tf.clearButtonMode = UITextFieldViewMode.whileEditing
-        
-        tf.tintColor = UIColor(red: 55/255, green: 183/255, blue: 255/255, alpha: 1)
-        tf.translatesAutoresizingMaskIntoConstraints = false
-        return tf
-    }()
-    
-    let emailSeparatorView:UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor(red: 220/255, green: 220/255, blue: 220/255, alpha: 1)
-        
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    let passwordTextField:UITextField = {
-        let tf = UITextField()
-        tf.placeholder = "Password"
-        tf.clearButtonMode = UITextFieldViewMode.whileEditing
-        tf.tintColor = UIColor(red: 55/255, green: 183/255, blue: 255/255, alpha: 1)
-        tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.isSecureTextEntry = true
-        return tf
-    }()
-    
-    
-    //function that create the Segmented UI
-    lazy var loginRegisterSegmentedControl: UISegmentedControl = {
-        let sc = UISegmentedControl(items: ["Login", "Register"])
-        sc.translatesAutoresizingMaskIntoConstraints = false
-        sc.tintColor = UIColor.white
-        sc.selectedSegmentIndex = 0
-       
-        sc.addTarget(self, action: #selector(handleLoginRegisterChange), for: .valueChanged)
-        return sc
-    }()
-    
-    
-    
-    //facebook login button
-  
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    //FB stuff ends
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        //Hide the keyboard when tapping around
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.dismissKeyboard))
-        
-        
-        view.addSubview(inputsContainerView)
-        view.addSubview(loginRegisterButton)
-        view.addSubview(loginRegisterSegmentedControl)
-        
-        setUpInputsContainerView()
-        setUpLoginRegisterButton()
-        setUpLoginRegisterSegmentControl()
-        
-        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
-        //tap.cancelsTouchesInView = false
-        
-        view.addGestureRecognizer(tap)
-        // Do any additional setup after loading the view.
-        
-        applyMotionEffect(toView:logoImageView, magnitude: 5)
-        
-        applyMotionEffect(toView:backgroundImageView, magnitude: 15)
-        //If FB signed in
-        
-        
-        let attributedString = NSAttributedString(string:"Forget your password?", attributes:[NSAttributedStringKey.foregroundColor:UIColor.white, NSAttributedStringKey.underlineStyle:1])
-        passwordButton.setAttributedTitle(attributedString, for: .normal)
-        
-    }
-    
-    
-    @IBOutlet var DimView: UIView!
-    //add forgot Password Pop Up
-    @IBAction func addForgetPasswordPopUp(_ sender: Any) {
-        self.view.addSubview(DimView)
-        self.DimView.alpha = 0
-        self.view.addSubview(addForgetPasswordView)
-        addForgetPasswordView.center = self.view.center
-        addForgetPasswordView.transform = CGAffineTransform.init(scaleX:1.3,y:1.3)
-        addForgetPasswordView.alpha = 0
-        addForgetPasswordView.layer.cornerRadius = 8
-        addForgetPasswordView.layer.masksToBounds = true
-        self.forgetPasswordTextField.tintColor = UIColor.blue
-        UIView.animate(withDuration:0.4){
-            self.addForgetPasswordView.alpha = 1
-            self.DimView.alpha = 0.56
-            self.addForgetPasswordView.transform = CGAffineTransform.identity
+    @IBAction func scActions(_ sender: Any) {
+        if sc.selectedSegmentIndex == 0 {
+            userName.isHidden = false
+            loginORegister.setTitle("Regist", for: .normal)
+        } else{
+            userName.isHidden = true
+             loginORegister.setTitle("Login", for: .normal)
         }
     }
     
-    
-    //do the forget password work and if successfully sent then dismiss the view
-    @IBAction func dismissForgetPasswordPopUp(_ sender: Any) {
-        if self.forgetPasswordTextField.text == "" {
-            Config.showAlerts(title: "Oops!", message: "Please enter your email!", handler: nil, controller: self)
+    @IBAction func loginRegist(_ sender: Any) {
+        if sc.selectedSegmentIndex == 1{
+            handleLogin()
+        } else {
+            handleRegister()
         }
-        else{
-            API.authAPI.sendPasswordReset(withEmail: self.forgetPasswordTextField.text!, onSuccess: {
-                self.forgetPasswordTextField.text = ""
-                Config.showAlerts(title: "Success!", message: "The password reset email was sent!", handler: {
-                    UIAlertAction in
-                    UIView.animate(withDuration:0.3, animations:{
-                        self.addForgetPasswordView.transform = CGAffineTransform.init(scaleX:1.3,y:1.3)
-                        self.addForgetPasswordView.alpha = 0
-                        self.DimView.alpha = 0
-                    }) {(success:Bool) in
-                        self.addForgetPasswordView.removeFromSuperview()
-                    }
+        
+    }
+    func handleLogin() {
+        if email.text == "" || password.text == "" {
+            Config.showAlerts(title: "Oops", message: "Please enter valid values!", handler: nil, controller: self)
+        }
+        else {
+            self.view.endEditing(true)
+            let email = self.email.text, password = self.password.text
+            API.authAPI.signInWithEmail(withEmail: email!, withPassword: password!, onSuccess: {
+                self.loginSuccess()
+            }, onEmailNotVerified: {
+                Config.showAlerts(title: "Oops!", message: "Please verify your email address first.", handler:nil, controller: self)
+            })
+        }
+    }
+    func handleRegister() {
+        if email.text == "" || password.text == "" || userName.text == ""
+        {
+            Config.showAlerts(title: "Oops!", message: "Please enter valid values!", handler: nil, controller: self)
+        }
+        else {
+            self.view.endEditing(true)
+            let email = self.email.text! as String, password = self.password.text, name = self.userName.text! as String
+            
+            API.authAPI.createNewUser(withName: name, withEmail: email, withPassword: password!, onSuccess: {
+                Config.showAlerts(title: "Success!", message: "Email was sent, please verify your email address now.", handler: {
+                    _ in
+                    self.email.text = ""
+                    self.password.text = ""
+                    self.userName.text = ""
                 }, controller: self)
             })
         }
+    }
+    func loginSuccess() {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let tabBarController = storyboard.instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
+        self.present(tabBarController, animated: true, completion: nil)
+        print("success")
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+       
+        
+        userName.clipsToBounds = true
+        userName.layer.cornerRadius = userName.bounds.size.height/2
+        userName.layer.borderColor = UIColor.white.cgColor
+        userName.layer.borderWidth = 3
+        
+        email.clipsToBounds = true
+        email.layer.cornerRadius = email.bounds.size.height/2
+        email.layer.borderColor = UIColor.white.cgColor
+        email.layer.borderWidth = 3
+        
+        password.clipsToBounds = true
+        password.layer.cornerRadius = password.bounds.size.height/2
+        password.layer.borderColor = UIColor.white.cgColor
+        password.layer.borderWidth = 3
+        
+        loginORegister.clipsToBounds = true
+        loginORegister.layer.cornerRadius = loginORegister.bounds.size.height/2
+        loginORegister.layer.borderColor = UIColor.white.cgColor
+        loginORegister.layer.borderWidth = 3
+        loginORegister.clipsToBounds = true
+        
+        
+        
         
     }
-    //Directly dismiss the password reset view
-    @IBAction func dismissPasswordReset(_ sender: AnyObject) {
-        UIView.animate(withDuration:0.3, animations:{
-            self.addForgetPasswordView.transform = CGAffineTransform.init(scaleX:1.3,y:1.3)
-            self.addForgetPasswordView.alpha = 0
-            self.DimView.alpha = 0
-        }) {(success:Bool) in
-            self.addForgetPasswordView.removeFromSuperview()
-        }
-    }
-    
-    //TextFields Edit
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
 }
