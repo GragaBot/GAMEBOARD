@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var sc: UISegmentedControl!
     
@@ -19,6 +19,11 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
     
     @IBOutlet weak var loginORegister: UIButton!
+    
+    @IBOutlet weak var profileImage: UIImageView!
+    
+  
+
     
     @IBAction func scActions(_ sender: Any) {
         if sc.selectedSegmentIndex == 0 {
@@ -38,6 +43,10 @@ class LoginViewController: UIViewController {
         }
         
     }
+    
+ 
+    
+    
     func handleLogin() {
         if email.text == "" || password.text == "" {
             Config.showAlerts(title: "Oops", message: "Please enter valid values!", handler: nil, controller: self)
@@ -69,6 +78,8 @@ class LoginViewController: UIViewController {
                     self.userName.text = ""
                 }, controller: self)
             })
+            
+            
         }
     }
     func loginSuccess() {
@@ -106,7 +117,11 @@ class LoginViewController: UIViewController {
         loginORegister.clipsToBounds = true
         
         
-        
+        profileImage.clipsToBounds = true
+        profileImage.layer.cornerRadius = profileImage.bounds.size.height/2
+        profileImage.layer.borderColor = UIColor.white.cgColor
+        profileImage.layer.borderWidth = 3
+        profileImage.clipsToBounds = true
         
     }
 

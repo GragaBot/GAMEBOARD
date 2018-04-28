@@ -19,7 +19,6 @@
 		714453D0200A4B9F00DF0EE8 /* PrizeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714453CF200A4B9F00DF0EE8 /* PrizeCollectionViewCell.swift */; };
 		715141452011FB6B00CD14C1 /* GameLogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715141442011FB6A00CD14C1 /* GameLogTableViewController.swift */; };
 		71CDADE42093CC2E00EA98E8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71CDADE32093CC2D00EA98E8 /* GoogleService-Info.plist */; };
-		71CDADEB2093D6D200EA98E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71CDADEA2093D6D100EA98E8 /* Assets.xcassets */; };
 		71CDADEF2093DD6B00EA98E8 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CDADEE2093DD6B00EA98E8 /* InitialViewController.swift */; };
 		71CDADF12093EFC000EA98E8 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CDADF02093EFC000EA98E8 /* API.swift */; };
 		71CDADF42093FB7000EA98E8 /* ScoreBoardAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CDADF32093FB7000EA98E8 /* ScoreBoardAPI.swift */; };
@@ -33,6 +32,8 @@
 		71CDAFAA20943D0700EA98E8 /* PostStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CDAFA920943D0700EA98E8 /* PostStruct.swift */; };
 		71CDAFAC20943D3300EA98E8 /* PostAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CDAFAB20943D3300EA98E8 /* PostAPI.swift */; };
 		71CDAFAE20943DB800EA98E8 /* FeedAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CDAFAD20943DB800EA98E8 /* FeedAPI.swift */; };
+		71CDAFBB20945BE600EA98E8 /* ProfileSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CDAFBA20945BE600EA98E8 /* ProfileSettingTableViewController.swift */; };
+		71CDAFC120945F8900EA98E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71CDAFC020945F8900EA98E8 /* Assets.xcassets */; };
 		71F55F89200D88EC00C92338 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 71F55F88200D88EC00C92338 /* Podfile */; };
 		71F55F8F200F069D00C92338 /* InputNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F55F8E200F069D00C92338 /* InputNameViewController.swift */; };
 		71F55F91201066A500C92338 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F55F90201066A400C92338 /* CustomSegmentedControl.swift */; };
@@ -76,7 +77,6 @@
 		714453CF200A4B9F00DF0EE8 /* PrizeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrizeCollectionViewCell.swift; sourceTree = "<group>"; };
 		715141442011FB6A00CD14C1 /* GameLogTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLogTableViewController.swift; sourceTree = "<group>"; };
 		71CDADE32093CC2D00EA98E8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		71CDADEA2093D6D100EA98E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
 		71CDADEE2093DD6B00EA98E8 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		71CDADF02093EFC000EA98E8 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		71CDADF32093FB7000EA98E8 /* ScoreBoardAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBoardAPI.swift; sourceTree = "<group>"; };
@@ -90,6 +90,8 @@
 		71CDAFA920943D0700EA98E8 /* PostStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostStruct.swift; sourceTree = "<group>"; };
 		71CDAFAB20943D3300EA98E8 /* PostAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostAPI.swift; sourceTree = "<group>"; };
 		71CDAFAD20943DB800EA98E8 /* FeedAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedAPI.swift; sourceTree = "<group>"; };
+		71CDAFBA20945BE600EA98E8 /* ProfileSettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingTableViewController.swift; sourceTree = "<group>"; };
+		71CDAFC020945F8900EA98E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Struct/Assets.xcassets; sourceTree = "<group>"; };
 		71F55F88200D88EC00C92338 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		71F55F8E200F069D00C92338 /* InputNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputNameViewController.swift; sourceTree = "<group>"; };
 		71F55F90201066A400C92338 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
@@ -159,12 +161,15 @@
 		7144539C200A426E00DF0EE8 /* GAMEBOARD */ = {
 			isa = PBXGroup;
 			children = (
-				71CDADF22093EFCA00EA98E8 /* DataBase */,
-				71CDADEA2093D6D100EA98E8 /* Assets.xcassets */,
+				71CDAFAF209446D400EA98E8 /* API */,
+				71CDADF22093EFCA00EA98E8 /* Struct */,
+				71CDAFC020945F8900EA98E8 /* Assets.xcassets */,
 				71CDADEE2093DD6B00EA98E8 /* InitialViewController.swift */,
 				71CDAF9920942E7A00EA98E8 /* LoginViewController.swift */,
 				7144539D200A426E00DF0EE8 /* AppDelegate.swift */,
 				7144539F200A426E00DF0EE8 /* ViewController.swift */,
+				71CDAFB320944AF400EA98E8 /* Profile */,
+				71CDAFB0209446FB00EA98E8 /* ScoreBoard */,
 				71F55F90201066A400C92338 /* CustomSegmentedControl.swift */,
 				714453CF200A4B9F00DF0EE8 /* PrizeCollectionViewCell.swift */,
 				714453A1200A426E00DF0EE8 /* Main.storyboard */,
@@ -198,21 +203,43 @@
 			path = GAMEBOARDUITests;
 			sourceTree = "<group>";
 		};
-		71CDADF22093EFCA00EA98E8 /* DataBase */ = {
+		71CDADF22093EFCA00EA98E8 /* Struct */ = {
+			isa = PBXGroup;
+			children = (
+				71CDAFA920943D0700EA98E8 /* PostStruct.swift */,
+				71CDADF52093FC9B00EA98E8 /* ScoreBoardStruct.swift */,
+				71CDAFA7209435E400EA98E8 /* ProfileStruct.swift */,
+			);
+			path = Struct;
+			sourceTree = "<group>";
+		};
+		71CDAFAF209446D400EA98E8 /* API */ = {
 			isa = PBXGroup;
 			children = (
 				71CDADF02093EFC000EA98E8 /* API.swift */,
 				71CDAFAD20943DB800EA98E8 /* FeedAPI.swift */,
-				71CDAFA920943D0700EA98E8 /* PostStruct.swift */,
 				71CDAFAB20943D3300EA98E8 /* PostAPI.swift */,
 				71CDADF32093FB7000EA98E8 /* ScoreBoardAPI.swift */,
-				71CDADF52093FC9B00EA98E8 /* ScoreBoardStruct.swift */,
 				71CDAFA1209435A300EA98E8 /* UserAPI.swift */,
 				71CDAFA3209435BB00EA98E8 /* AuthAPI.swift */,
 				71CDAFA5209435CD00EA98E8 /* FIRStorageAPI.swift */,
-				71CDAFA7209435E400EA98E8 /* ProfileStruct.swift */,
 			);
-			path = DataBase;
+			path = API;
+			sourceTree = "<group>";
+		};
+		71CDAFB0209446FB00EA98E8 /* ScoreBoard */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ScoreBoard;
+			sourceTree = "<group>";
+		};
+		71CDAFB320944AF400EA98E8 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				71CDAFBA20945BE600EA98E8 /* ProfileSettingTableViewController.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		C13F81112567DD1E205DE3F2 /* Pods */ = {
@@ -338,7 +365,7 @@
 				71CDADE42093CC2E00EA98E8 /* GoogleService-Info.plist in Resources */,
 				71F55F89200D88EC00C92338 /* Podfile in Resources */,
 				714453A3200A426E00DF0EE8 /* Main.storyboard in Resources */,
-				71CDADEB2093D6D200EA98E8 /* Assets.xcassets in Resources */,
+				71CDAFC120945F8900EA98E8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +448,7 @@
 				71CDADEF2093DD6B00EA98E8 /* InitialViewController.swift in Sources */,
 				71CDAF9620941D9800EA98E8 /* Config.swift in Sources */,
 				71CDADF12093EFC000EA98E8 /* API.swift in Sources */,
+				71CDAFBB20945BE600EA98E8 /* ProfileSettingTableViewController.swift in Sources */,
 				7144539E200A426E00DF0EE8 /* AppDelegate.swift in Sources */,
 				71CDAFA2209435A300EA98E8 /* UserAPI.swift in Sources */,
 				71CDADF62093FC9B00EA98E8 /* ScoreBoardStruct.swift in Sources */,
