@@ -21,9 +21,11 @@ class SettingTableViewCell: UITableViewCell,UITextFieldDelegate {
         super.awakeFromNib()
         // Initialization code
         done.layer.borderWidth = 3
-        done.layer.borderColor = UIColor.lightText.cgColor
+        done.layer.borderColor = UIColor.orange.cgColor
         activeButton.layer.borderWidth = 3
-        activeButton.layer.borderColor = UIColor.lightText.cgColor
+        activeButton.layer.borderColor = UIColor.orange.cgColor
+        
+        
         
     }
     
@@ -50,11 +52,11 @@ class SettingTableViewCell: UITableViewCell,UITextFieldDelegate {
             if GlobalVariables.active[cellIndex] == 0 {
                 GlobalVariables.active[cellIndex] = 1
                 activeButton.setTitle("ACTIVE", for: .normal)
-                activeButton.backgroundColor = UIColor.orange
+                activeButton.layer.borderColor = UIColor.orange.cgColor
             } else {
                 GlobalVariables.active[cellIndex] = 0
                 activeButton.setTitle("INACTIVE", for: .normal)
-                activeButton.backgroundColor = UIColor.red
+                activeButton.layer.borderColor = UIColor.red.cgColor
                 
             }
         //}

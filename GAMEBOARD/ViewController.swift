@@ -117,6 +117,8 @@ class ViewController: UIViewController, UIPickerViewDelegate,UIPickerViewDataSou
         
         scoreBoard.dataSource=self
         scoreBoard.delegate = self
+        scoreBoard.showsSelectionIndicator = false
+        
         
         amount.dataSource = self
         amount.delegate = self

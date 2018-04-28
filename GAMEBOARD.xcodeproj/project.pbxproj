@@ -11,7 +11,6 @@
 		7144539E200A426E00DF0EE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7144539D200A426E00DF0EE8 /* AppDelegate.swift */; };
 		714453A0200A426E00DF0EE8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7144539F200A426E00DF0EE8 /* ViewController.swift */; };
 		714453A3200A426E00DF0EE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 714453A1200A426E00DF0EE8 /* Main.storyboard */; };
-		714453A5200A426E00DF0EE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 714453A4200A426E00DF0EE8 /* Assets.xcassets */; };
 		714453A8200A426E00DF0EE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 714453A6200A426E00DF0EE8 /* LaunchScreen.storyboard */; };
 		714453B3200A426E00DF0EE8 /* GAMEBOARDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714453B2200A426E00DF0EE8 /* GAMEBOARDTests.swift */; };
 		714453BE200A426E00DF0EE8 /* GAMEBOARDUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714453BD200A426E00DF0EE8 /* GAMEBOARDUITests.swift */; };
@@ -19,6 +18,13 @@
 		714453CE200A436700DF0EE8 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714453CD200A436700DF0EE8 /* SettingTableViewCell.swift */; };
 		714453D0200A4B9F00DF0EE8 /* PrizeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714453CF200A4B9F00DF0EE8 /* PrizeCollectionViewCell.swift */; };
 		715141452011FB6B00CD14C1 /* GameLogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715141442011FB6A00CD14C1 /* GameLogTableViewController.swift */; };
+		71CDADE42093CC2E00EA98E8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71CDADE32093CC2D00EA98E8 /* GoogleService-Info.plist */; };
+		71CDADEB2093D6D200EA98E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71CDADEA2093D6D100EA98E8 /* Assets.xcassets */; };
+		71CDADEF2093DD6B00EA98E8 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CDADEE2093DD6B00EA98E8 /* InitialViewController.swift */; };
+		71CDADF12093EFC000EA98E8 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CDADF02093EFC000EA98E8 /* API.swift */; };
+		71CDADF42093FB7000EA98E8 /* ScoreBoardAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CDADF32093FB7000EA98E8 /* ScoreBoardAPI.swift */; };
+		71CDADF62093FC9B00EA98E8 /* ScoreBoardStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CDADF52093FC9B00EA98E8 /* ScoreBoardStruct.swift */; };
+		71CDAF9620941D9800EA98E8 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CDAF9520941D9800EA98E8 /* Config.swift */; };
 		71F55F89200D88EC00C92338 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 71F55F88200D88EC00C92338 /* Podfile */; };
 		71F55F8F200F069D00C92338 /* InputNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F55F8E200F069D00C92338 /* InputNameViewController.swift */; };
 		71F55F91201066A500C92338 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F55F90201066A400C92338 /* CustomSegmentedControl.swift */; };
@@ -49,7 +55,6 @@
 		7144539D200A426E00DF0EE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7144539F200A426E00DF0EE8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		714453A2200A426E00DF0EE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		714453A4200A426E00DF0EE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		714453A7200A426E00DF0EE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		714453A9200A426E00DF0EE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		714453AE200A426E00DF0EE8 /* GAMEBOARDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GAMEBOARDTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +67,13 @@
 		714453CD200A436700DF0EE8 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		714453CF200A4B9F00DF0EE8 /* PrizeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrizeCollectionViewCell.swift; sourceTree = "<group>"; };
 		715141442011FB6A00CD14C1 /* GameLogTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLogTableViewController.swift; sourceTree = "<group>"; };
+		71CDADE32093CC2D00EA98E8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		71CDADEA2093D6D100EA98E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
+		71CDADEE2093DD6B00EA98E8 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		71CDADF02093EFC000EA98E8 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		71CDADF32093FB7000EA98E8 /* ScoreBoardAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBoardAPI.swift; sourceTree = "<group>"; };
+		71CDADF52093FC9B00EA98E8 /* ScoreBoardStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBoardStruct.swift; sourceTree = "<group>"; };
+		71CDAF9520941D9800EA98E8 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		71F55F88200D88EC00C92338 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		71F55F8E200F069D00C92338 /* InputNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputNameViewController.swift; sourceTree = "<group>"; };
 		71F55F90201066A400C92338 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
@@ -131,18 +143,22 @@
 		7144539C200A426E00DF0EE8 /* GAMEBOARD */ = {
 			isa = PBXGroup;
 			children = (
+				71CDADF22093EFCA00EA98E8 /* DataBase */,
+				71CDADEA2093D6D100EA98E8 /* Assets.xcassets */,
+				71CDADEE2093DD6B00EA98E8 /* InitialViewController.swift */,
 				7144539D200A426E00DF0EE8 /* AppDelegate.swift */,
 				7144539F200A426E00DF0EE8 /* ViewController.swift */,
 				71F55F90201066A400C92338 /* CustomSegmentedControl.swift */,
 				714453CF200A4B9F00DF0EE8 /* PrizeCollectionViewCell.swift */,
 				714453A1200A426E00DF0EE8 /* Main.storyboard */,
+				71CDAF9520941D9800EA98E8 /* Config.swift */,
 				715141442011FB6A00CD14C1 /* GameLogTableViewController.swift */,
 				714453CD200A436700DF0EE8 /* SettingTableViewCell.swift */,
 				71F55F8E200F069D00C92338 /* InputNameViewController.swift */,
 				714453CB200A42B800DF0EE8 /* SettingViewController.swift */,
-				714453A4200A426E00DF0EE8 /* Assets.xcassets */,
 				714453A6200A426E00DF0EE8 /* LaunchScreen.storyboard */,
 				714453A9200A426E00DF0EE8 /* Info.plist */,
+				71CDADE32093CC2D00EA98E8 /* GoogleService-Info.plist */,
 			);
 			path = GAMEBOARD;
 			sourceTree = "<group>";
@@ -163,6 +179,16 @@
 				714453BF200A426E00DF0EE8 /* Info.plist */,
 			);
 			path = GAMEBOARDUITests;
+			sourceTree = "<group>";
+		};
+		71CDADF22093EFCA00EA98E8 /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				71CDADF02093EFC000EA98E8 /* API.swift */,
+				71CDADF32093FB7000EA98E8 /* ScoreBoardAPI.swift */,
+				71CDADF52093FC9B00EA98E8 /* ScoreBoardStruct.swift */,
+			);
+			path = DataBase;
 			sourceTree = "<group>";
 		};
 		C13F81112567DD1E205DE3F2 /* Pods */ = {
@@ -285,9 +311,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				714453A8200A426E00DF0EE8 /* LaunchScreen.storyboard in Resources */,
-				714453A5200A426E00DF0EE8 /* Assets.xcassets in Resources */,
+				71CDADE42093CC2E00EA98E8 /* GoogleService-Info.plist in Resources */,
 				71F55F89200D88EC00C92338 /* Podfile in Resources */,
 				714453A3200A426E00DF0EE8 /* Main.storyboard in Resources */,
+				71CDADEB2093D6D200EA98E8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,8 +390,13 @@
 				71F55F91201066A500C92338 /* CustomSegmentedControl.swift in Sources */,
 				71F55F8F200F069D00C92338 /* InputNameViewController.swift in Sources */,
 				714453A0200A426E00DF0EE8 /* ViewController.swift in Sources */,
+				71CDADEF2093DD6B00EA98E8 /* InitialViewController.swift in Sources */,
+				71CDAF9620941D9800EA98E8 /* Config.swift in Sources */,
+				71CDADF12093EFC000EA98E8 /* API.swift in Sources */,
 				7144539E200A426E00DF0EE8 /* AppDelegate.swift in Sources */,
+				71CDADF62093FC9B00EA98E8 /* ScoreBoardStruct.swift in Sources */,
 				715141452011FB6B00CD14C1 /* GameLogTableViewController.swift in Sources */,
+				71CDADF42093FB7000EA98E8 /* ScoreBoardAPI.swift in Sources */,
 				714453CE200A436700DF0EE8 /* SettingTableViewCell.swift in Sources */,
 				714453D0200A4B9F00DF0EE8 /* PrizeCollectionViewCell.swift in Sources */,
 				714453CC200A42B800DF0EE8 /* SettingViewController.swift in Sources */,
@@ -533,13 +565,18 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0A3434DA4ABFE6B3FBC0981D /* Pods-GAMEBOARD.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E23AHD5J9B;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GAMEBOARD/FashionRaffle",
+				);
 				INFOPLIST_FILE = GAMEBOARD/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = T.GAMEBOARD;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SuperGameBoard.Firebase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -550,13 +587,18 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3D3BB3D58FCF86F124D60E8F /* Pods-GAMEBOARD.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E23AHD5J9B;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GAMEBOARD/FashionRaffle",
+				);
 				INFOPLIST_FILE = GAMEBOARD/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = T.GAMEBOARD;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SuperGameBoard.Firebase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

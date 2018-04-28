@@ -180,17 +180,17 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.done.layer.cornerRadius = cell.done.bounds.size.height/2
         cell.done.clipsToBounds = true
         if GlobalVariables.active[indexPath.row] == 1{
-            cell.activeButton.backgroundColor = UIColor.orange
+            cell.activeButton.backgroundColor = UIColor.white
         }
         cell.activeButton.layer.cornerRadius = cell.activeButton.bounds.size.height/2
         cell.activeButton.clipsToBounds = true
         cell.activeButton.setTitle("ACTIVE", for: .normal)
         if GlobalVariables.active[indexPath.row] == 0 {
             cell.activeButton.setTitle("INACTIVE", for: .normal)
-            cell.activeButton.backgroundColor = UIColor.red
+            cell.activeButton.layer.borderColor = UIColor.red.cgColor
         } else {
             cell.activeButton.setTitle("ACTIVE", for: .normal)
-            cell.activeButton.backgroundColor = UIColor.orange
+            cell.activeButton.layer.borderColor = UIColor.orange.cgColor
             
         }
         

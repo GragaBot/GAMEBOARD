@@ -7,17 +7,25 @@
 //
 
 import UIKit
+import Firebase
+import EventKit
+import FirebaseDatabase
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var ref: DatabaseReference?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         //IQKeyboardManager.sharedManager().enable = true
         
+        FirebaseApp.configure()
+        ref = Database.database().reference()
+        ref?.child("scoreboard").childByAutoId().setValue("here")
+
         
         return true
     }
