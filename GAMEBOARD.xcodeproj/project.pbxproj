@@ -34,6 +34,8 @@
 		71CDAFAE20943DB800EA98E8 /* FeedAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CDAFAD20943DB800EA98E8 /* FeedAPI.swift */; };
 		71CDAFBB20945BE600EA98E8 /* ProfileSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CDAFBA20945BE600EA98E8 /* ProfileSettingTableViewController.swift */; };
 		71CDAFC120945F8900EA98E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71CDAFC020945F8900EA98E8 /* Assets.xcassets */; };
+		71E5486020952EF100EB688E /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E5485F20952EF100EB688E /* ContactsTableViewController.swift */; };
+		71E5486220956B5200EB688E /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E5486120956B5200EB688E /* ContactsTableViewCell.swift */; };
 		71F55F89200D88EC00C92338 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 71F55F88200D88EC00C92338 /* Podfile */; };
 		71F55F8F200F069D00C92338 /* InputNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F55F8E200F069D00C92338 /* InputNameViewController.swift */; };
 		71F55F91201066A500C92338 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F55F90201066A400C92338 /* CustomSegmentedControl.swift */; };
@@ -92,6 +94,8 @@
 		71CDAFAD20943DB800EA98E8 /* FeedAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedAPI.swift; sourceTree = "<group>"; };
 		71CDAFBA20945BE600EA98E8 /* ProfileSettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingTableViewController.swift; sourceTree = "<group>"; };
 		71CDAFC020945F8900EA98E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Struct/Assets.xcassets; sourceTree = "<group>"; };
+		71E5485F20952EF100EB688E /* ContactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
+		71E5486120956B5200EB688E /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
 		71F55F88200D88EC00C92338 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		71F55F8E200F069D00C92338 /* InputNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputNameViewController.swift; sourceTree = "<group>"; };
 		71F55F90201066A400C92338 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
@@ -238,6 +242,8 @@
 			isa = PBXGroup;
 			children = (
 				71CDAFBA20945BE600EA98E8 /* ProfileSettingTableViewController.swift */,
+				71E5485F20952EF100EB688E /* ContactsTableViewController.swift */,
+				71E5486120956B5200EB688E /* ContactsTableViewCell.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -446,11 +452,13 @@
 				714453A0200A426E00DF0EE8 /* ViewController.swift in Sources */,
 				71CDAFA4209435BB00EA98E8 /* AuthAPI.swift in Sources */,
 				71CDADEF2093DD6B00EA98E8 /* InitialViewController.swift in Sources */,
+				71E5486220956B5200EB688E /* ContactsTableViewCell.swift in Sources */,
 				71CDAF9620941D9800EA98E8 /* Config.swift in Sources */,
 				71CDADF12093EFC000EA98E8 /* API.swift in Sources */,
 				71CDAFBB20945BE600EA98E8 /* ProfileSettingTableViewController.swift in Sources */,
 				7144539E200A426E00DF0EE8 /* AppDelegate.swift in Sources */,
 				71CDAFA2209435A300EA98E8 /* UserAPI.swift in Sources */,
+				71E5486020952EF100EB688E /* ContactsTableViewController.swift in Sources */,
 				71CDADF62093FC9B00EA98E8 /* ScoreBoardStruct.swift in Sources */,
 				715141452011FB6B00CD14C1 /* GameLogTableViewController.swift in Sources */,
 				71CDADF42093FB7000EA98E8 /* ScoreBoardAPI.swift in Sources */,

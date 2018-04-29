@@ -13,8 +13,7 @@ class Profile {
     let userID:String?
     var email:String
     var username:String
-    var followers:[String]?
-    var following:[String]?
+    var friends:[String]?
     var followBrands:[String]?
     var profilePicUrl:URL?
     var backgroundPictureUrl: URL?
@@ -24,12 +23,11 @@ class Profile {
 
     static var currentUser:Profile?
     
-    init(username:String, email:String,userID:String,  followers:[String]?, following:[String]?,posts:[String]?, profilePicUrl:URL?, backgroundPictureUrl: URL?, bio: String?) {
+    init(username:String, email:String,userID:String,  friends:[String]?, posts:[String]?, profilePicUrl:URL?, backgroundPictureUrl: URL?, bio: String?) {
         self.username = username
         self.userID = userID
         self.email = email
-        self.followers = followers
-        self.following = following
+        self.friends = friends
         self.profilePicUrl = profilePicUrl
         self.backgroundPictureUrl = backgroundPictureUrl
         self.bio = bio
@@ -40,7 +38,7 @@ class Profile {
     }
     // Used during register
     static func newUser(username:String!,userID:String!, email:String!) -> Profile {
-        return Profile(username: username, email:email, userID: userID, followers: [String](), following: [String](),posts: [String](), profilePicUrl: nil, backgroundPictureUrl: nil, bio: nil)
+        return Profile(username: username, email:email, userID: userID, friends: [String](),posts: [String](), profilePicUrl: nil, backgroundPictureUrl: nil, bio: nil)
     }
     
     // Used during login
@@ -48,8 +46,7 @@ class Profile {
         let profile = Profile.newUser(username: "Default", userID: userID, email: "Default")
         
         //fetch username,email,raffleTickets,checkinCount,followers,followings, brands,posts, picture
-        var followerStr = [String]()
-        var followingStr = [String]()
+        var friendStr = [String]()
         var postStr = [String]()
         
         if let email = profileDict["email"] as? String {
@@ -60,17 +57,11 @@ class Profile {
         }
         
         
-        if let followers = profileDict["followers"] as? [String:Bool] {
-            for tempfollowers in followers {
-                followerStr.append(tempfollowers.key)
+        if let friends = profileDict["friends"] as? [String:Bool] {
+            for tempfollowers in friends {
+                friendStr.append(tempfollowers.key)
             }
-            profile.followers = followerStr
-        }
-        if let following = profileDict["following"] as? [String:Bool] {
-            for tempfollowing in following {
-                followingStr.append(tempfollowing.key)
-            }
-            profile.following = followingStr
+            profile.friends = friendStr
         }
       
         if let imgUrlString = profileDict["profilePicUrl"] as? String {
@@ -98,8 +89,7 @@ class Profile {
         
         var profileDict:[String:Any] = [:]
         //fetch userID,username,email,tickets,checkInCount,followers,following, followBrands,posts, picture
-        var followerDB = [String:Bool]()
-        var followingDB = [String:Bool]()
+        var friendDB = [String:Bool]()
         var postDB = [String:Bool]()
         
         //profileDict["userID"] = userID
@@ -112,18 +102,13 @@ class Profile {
             }
             profileDict["posts"] = postDB
         }
-        if let followersnew = followers {
-            for followerStr in followersnew {
-                followerDB[followerStr] = true
+        if let friendsnew = friends {
+            for friendStr in friendsnew {
+                friendDB[friendStr] = true
             }
-            profileDict["followers"] = followerDB
+            profileDict["friends"] = friendDB
         }
-        if let followingnew = following {
-            for followingStr in followingnew {
-                followingDB[followingStr] = true
-            }
-            profileDict["following"] = followingDB
-        }
+        
         if let postnew = posts {
             for postStr in postnew {
                 postDB[postStr] = true
