@@ -19,11 +19,12 @@ class Profile {
     var backgroundPictureUrl: URL?
     var bio: String?
     var posts:[String]?
+    var invites: [String]?
 
 
     static var currentUser:Profile?
     
-    init(username:String, email:String,userID:String,  friends:[String]?, posts:[String]?, profilePicUrl:URL?, backgroundPictureUrl: URL?, bio: String?) {
+    init(username:String, email:String,userID:String,  friends:[String]?, posts:[String]?, profilePicUrl:URL?, backgroundPictureUrl: URL?, bio: String?, invites: [String]?) {
         self.username = username
         self.userID = userID
         self.email = email
@@ -32,13 +33,14 @@ class Profile {
         self.backgroundPictureUrl = backgroundPictureUrl
         self.bio = bio
         self.posts = posts
+        self.invites = invites
 
         // Check in upon login
         //It's the local time, later it should be a world time and can't be changed from the user's calendar
     }
     // Used during register
     static func newUser(username:String!,userID:String!, email:String!) -> Profile {
-        return Profile(username: username, email:email, userID: userID, friends: [String](),posts: [String](), profilePicUrl: nil, backgroundPictureUrl: nil, bio: nil)
+        return Profile(username: username, email:email, userID: userID, friends: [String](),posts: [String](), profilePicUrl: nil, backgroundPictureUrl: nil, bio: nil, invites: nil)
     }
     
     // Used during login
@@ -51,6 +53,9 @@ class Profile {
         
         if let email = profileDict["email"] as? String {
             profile.email = email
+        }
+        if let invites = profileDict["invites"] as? String {
+            profile.invites = [invites]
         }
         if let username = profileDict["username"] as? String {
             profile.username = username
@@ -91,6 +96,7 @@ class Profile {
         //fetch userID,username,email,tickets,checkInCount,followers,following, followBrands,posts, picture
         var friendDB = [String:Bool]()
         var postDB = [String:Bool]()
+        var invitesDB = [String:Bool]()
         
         //profileDict["userID"] = userID
         profileDict["username"] = username
@@ -107,6 +113,12 @@ class Profile {
                 friendDB[friendStr] = true
             }
             profileDict["friends"] = friendDB
+        }
+        if let invitesnew = invites{
+            for inviteStr in invitesnew{
+                invitesDB[inviteStr] = true
+            }
+            profileDict["invites"] = invitesDB
         }
         
         if let postnew = posts {

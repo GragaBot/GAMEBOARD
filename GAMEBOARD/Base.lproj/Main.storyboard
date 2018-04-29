@@ -809,6 +809,35 @@
             </objects>
             <point key="canvasLocation" x="-1727" y="1110"/>
         </scene>
+        <!--Table View Controller-->
+        <scene sceneID="vCH-pn-Wbi">
+            <objects>
+                <tableViewController id="O90-Wh-TqU" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="h4B-DI-1XN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="bIL-yT-Ldm">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bIL-yT-Ldm" id="Jjs-wk-0lU">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="O90-Wh-TqU" id="ElY-St-le7"/>
+                            <outlet property="delegate" destination="O90-Wh-TqU" id="ZPs-Sb-qcC"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" systemItem="recents" id="Fnu-1C-9pO"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bJW-yH-a4h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1721" y="-692"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="CYy-Sh-lQ5">
             <objects>
@@ -821,6 +850,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="hv0-eC-Koj" kind="relationship" relationship="viewControllers" id="oLe-ce-Iit"/>
+                        <segue destination="O90-Wh-TqU" kind="relationship" relationship="viewControllers" id="r17-ei-QDY"/>
                         <segue destination="1Yl-5W-MRd" kind="relationship" relationship="viewControllers" id="zQw-li-tZa"/>
                     </connections>
                 </tabBarController>
@@ -1009,6 +1039,9 @@
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <state key="normal" title="Button"/>
+                                            <connections>
+                                                <action selector="actions:" destination="Beg-US-bVr" eventType="touchUpInside" id="IGf-8t-Noa"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kH8-PK-0yA">
                                             <rect key="frame" x="62" y="16" width="122" height="33"/>
@@ -1032,6 +1065,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="actionButton" destination="qr4-Xe-40q" id="J62-aP-Hob"/>
                                     <outlet property="profileImage" destination="HxE-oj-0dH" id="T7T-Au-fVZ"/>
                                     <outlet property="username" destination="kH8-PK-0yA" id="5IB-Lj-Zai"/>
                                 </connections>

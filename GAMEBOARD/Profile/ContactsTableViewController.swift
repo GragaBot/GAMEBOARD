@@ -21,7 +21,8 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        fetchSelectedUser()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,30 +42,43 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
         
         return userProfile.count
     }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "contactsCell", for: indexPath) as! ContactsTableViewCell
         cell.selectedUser = userProfile[indexPath.row]
-        cell.profileImage.clipsToBounds = true
-        cell.profileImage.layer.cornerRadius = cell.profileImage.bounds.size.height/2
+        cell.index = indexPath.row
         
         return cell
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
-    /*
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        findUser(text: searchText)
-    }*/
+    
+ 
+    
+    
+    func fetchSelectedUser(){
+        Config.showPlainLoading(withStatus: nil)
+        
+        
+        for userID in (Profile.currentUser?.friends)! {
+            
+            print(userID)
+            
+            API.userAPI.fetchUserInfo(withID: userID, completion: {
+                fetchProfiles in
+                self.userProfile.append(fetchProfiles!)
+                self.contactTableView.reloadData()
+                Config.dismissPlainLoading()
+
+            })
+        }
+    }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         findUser(text: searchBar.text!)
-
     }
-    
     func showSearchedUser(text: String) -> Void{
-        //print("+++" + text + "+++")
-        
         API.userAPI.fetchUserInfo(withID: text, completion: {
             fetchProfiles in
             if fetchProfiles?.userID != Profile.currentUser?.userID {

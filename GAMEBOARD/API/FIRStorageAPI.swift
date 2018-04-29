@@ -8,6 +8,7 @@
 
 import Foundation
 import FirebaseStorage
+import Firebase
 //import SVProgressHUD
 
 
