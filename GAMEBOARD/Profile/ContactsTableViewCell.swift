@@ -16,31 +16,32 @@ class ContactsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var actionButton: UIButton!
     
-    var index: Int = 0
     
     var currentUserID = Profile.currentUser?.userID
     
     enum FollowButtonState: String {
         case CurrentUser = ""
-        case NotFriend = "Follow"
-        case Friend = "Following"
+        case NotFriend = "+"
+        case Friend = "x"
     }
+    
     var followbuttonState: FollowButtonState = .CurrentUser {
         willSet(newState) {
+            actionButton.clipsToBounds = true
+            actionButton.layer.cornerRadius = actionButton.bounds.size.height/2
             switch newState {
             case .CurrentUser:
                 actionButton.isHidden = true
             case .NotFriend:
                 actionButton.isHidden = false
-                actionButton.backgroundColor = UIColor(red: 0, green: 134/255, blue: 255/255, alpha: 1)
+                actionButton.backgroundColor = UIColor.green
                 actionButton.setTitleColor(UIColor.white, for: .normal)
                 actionButton.layer.borderWidth = 0
             case .Friend:
                 actionButton.isHidden = false
-                actionButton.backgroundColor = UIColor.white
-                actionButton.setTitleColor(UIColor.black, for: .normal)
-                actionButton.layer.borderColor = UIColor.black.cgColor
-                actionButton.layer.borderWidth = 0.8
+                actionButton.backgroundColor = UIColor.red
+                actionButton.setTitleColor(UIColor.white, for: .normal)
+                
             }
             actionButton.setTitle(newState.rawValue, for: UIControlState())
         }
@@ -81,18 +82,18 @@ class ContactsTableViewCell: UITableViewCell {
             
             API().userRef.child((selectedUser?.userID)!).child("friends").child(currentUserID!).removeValue()
             self.followbuttonState = .NotFriend
+            let index = Profile.currentUser?.friends?.index(of: (selectedUser?.userID)!)
+            Profile.currentUser?.friends?.remove(at: index!)
             
-            Profile.currentUser?.friends?.remove(at: index)
-
         }
         else if followbuttonState == .NotFriend{
             //invite
-            API().userRef.child((self.selectedUser?.userID)!).child("requests").child((Profile.currentUser?.userID)!).setValue(true)
+            API().userRef.child((self.selectedUser?.userID)!).child("invites").child((Profile.currentUser?.userID)!).setValue("friend")
             
-            API().userRef.child(currentUserID!).child("friends").child((selectedUser?.userID)!).setValue(true)
+           /* API().userRef.child(currentUserID!).child("friends").child((selectedUser?.userID)!).setValue(true)
             API().userRef.child((selectedUser?.userID)!).child("friends").child(currentUserID!).setValue(true)
-            Profile.currentUser?.friends?.append((selectedUser?.userID)!)
-            self.followbuttonState = .Friend
+            Profile.currentUser?.friends?.append((selectedUser?.userID)!)*/
+            //self.followbuttonState = .Friend
 
         }
     }

@@ -20,9 +20,11 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        fetchSelectedUser()
-
+        if Profile.currentUser?.friends?.isEmpty != true {
+            fetchSelectedUser()
+        }
+        contactTableView.delegate = self
+        contactTableView.dataSource = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,7 +48,6 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "contactsCell", for: indexPath) as! ContactsTableViewCell
         cell.selectedUser = userProfile[indexPath.row]
-        cell.index = indexPath.row
         
         return cell
     }
@@ -101,6 +102,7 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
             let userID = "\(snapshot.key)"
             //print("\(snapshot.key)")
             self.showSearchedUser(text: userID)
+            
         })
     }
 }

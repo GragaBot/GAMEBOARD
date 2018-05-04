@@ -40,7 +40,7 @@ class Profile {
     }
     // Used during register
     static func newUser(username:String!,userID:String!, email:String!) -> Profile {
-        return Profile(username: username, email:email, userID: userID, friends: [String](),posts: [String](), profilePicUrl: nil, backgroundPictureUrl: nil, bio: nil, invites: nil)
+        return Profile(username: username, email:email, userID: userID, friends: [String](),posts: [String](), profilePicUrl: nil, backgroundPictureUrl: nil, bio: nil, invites: [String]())
     }
     
     // Used during login
@@ -50,12 +50,16 @@ class Profile {
         //fetch username,email,raffleTickets,checkinCount,followers,followings, brands,posts, picture
         var friendStr = [String]()
         var postStr = [String]()
+        var inviteStr = [String]()
         
         if let email = profileDict["email"] as? String {
             profile.email = email
         }
-        if let invites = profileDict["invites"] as? String {
-            profile.invites = [invites]
+        if let invites = profileDict["invites"] as? [String:String] {
+            for tempInvites in invites{
+                inviteStr.append(tempInvites.key)
+            }
+            profile.invites = inviteStr
         }
         if let username = profileDict["username"] as? String {
             profile.username = username
@@ -96,7 +100,7 @@ class Profile {
         //fetch userID,username,email,tickets,checkInCount,followers,following, followBrands,posts, picture
         var friendDB = [String:Bool]()
         var postDB = [String:Bool]()
-        var invitesDB = [String:Bool]()
+        var invitesDB = [String:String]()
         
         //profileDict["userID"] = userID
         profileDict["username"] = username
@@ -116,7 +120,7 @@ class Profile {
         }
         if let invitesnew = invites{
             for inviteStr in invitesnew{
-                invitesDB[inviteStr] = true
+                invitesDB[inviteStr] = ""
             }
             profileDict["invites"] = invitesDB
         }

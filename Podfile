@@ -10,6 +10,7 @@ target 'GAMEBOARD' do
   pod 'FirebaseUI/Storage', '~> 0.6'
   pod 'SVProgressHUD'
 
+  pod 'AnimatedDropdownMenu'
 
 end
 

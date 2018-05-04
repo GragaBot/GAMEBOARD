@@ -9,11 +9,15 @@
 import UIKit
 
 class ProfileSettingTableViewController: UITableViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
-
+    
+    
+    @IBOutlet weak var checkInvites: UIButton!
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var changeProfileImage: UIButton!
     @IBOutlet weak var email: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,7 +27,7 @@ class ProfileSettingTableViewController: UITableViewController, UIImagePickerCon
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         self.email.text = Profile.currentUser?.email
-        
+
         profileImage.clipsToBounds = true
         profileImage.layer.cornerRadius = profileImage.bounds.size.height/2
         profileImage.layer.borderColor = UIColor.white.cgColor
@@ -109,6 +113,38 @@ class ProfileSettingTableViewController: UITableViewController, UIImagePickerCon
             })
         }
         
+    }
+    @IBAction func checkPendingInvites(_ sender: Any) {
+        API().userRef.child((Profile.currentUser?.userID)!).child("invites").observeSingleEvent(of: .value, with: {
+            snapshot in
+            let count = snapshot.childrenCount
+            print (count)
+            if count != 0{
+                
+                if let vc = self.storyboard?.instantiateViewController(withIdentifier: "invitationPopover"){
+                    
+                    vc.modalTransitionStyle = .crossDissolve
+                    vc.modalPresentationStyle = .overCurrentContext
+                    self.present(vc, animated: true, completion: nil)
+                }
+            } else {
+                Config.showError(withStatus: "No pending invite")
+                print("no invites")
+            }
+        })
+        
+       
+        /*
+        if Profile.currentUser?.invites?.isEmpty == true{
+            Config.showError(withStatus: "No pending invite")
+            print("no invites")
+        }else {
+            if let vc = self.storyboard?.instantiateViewController(withIdentifier: "invitationPopover"){
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overCurrentContext
+                self.present(vc, animated: true, completion: nil)
+            }
+        }*/
     }
     
 
